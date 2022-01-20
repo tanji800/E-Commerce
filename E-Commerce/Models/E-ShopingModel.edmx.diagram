@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0d081747a916457a98ad8aaa59bcd3e4" Name="Diagram1" ZoomLevel="75">
+        <EntityTypeShape EntityType="EShoppingDBModel.adminn" Width="1.5" PointX="3.375" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EShoppingDBModel.cateogory" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EShoppingDBModel.sysdiagram" Width="1.5" PointX="3.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EShoppingDBModel.tbl_user" Width="1.5" PointX="8.875" PointY="0.625" IsExpanded="true" />
+        <AssociationConnector Association="EShoppingDBModel.FK__cateogory__ad_id__15502E78" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="EShoppingDBModel.order_table" Width="1.5" PointX="5.375" PointY="4.5" />
+        <EntityTypeShape EntityType="EShoppingDBModel.product" Width="1.5" PointX="5.375" PointY="1" />
+        <AssociationConnector Association="EShoppingDBModel.FK__order_tab__o_fk___267ABA7A" />
+        <AssociationConnector Association="EShoppingDBModel.FK_products_cateogories" />
+        <AssociationConnector Association="EShoppingDBModel.FK_products_tbl_user" />
+        <EntityTypeShape EntityType="EShoppingDBModel.tbl_invoice" Width="1.5" PointX="9" PointY="4.625" />
+        <AssociationConnector Association="EShoppingDBModel.FK__order_tab__o_fk___286302EC" />
+        <AssociationConnector Association="EShoppingDBModel.FK_tbl_invoice_tbl_user" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

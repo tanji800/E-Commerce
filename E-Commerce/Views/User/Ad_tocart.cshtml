@@ -1,0 +1,54 @@
+﻿@model E_Commerce.Models.product
+@{
+    ViewBag.Title = "Ad_tocart";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<head>
+
+    <style>
+        body {
+            
+            background-image: url('../../Content/images/cyber-monday-retail-sales.jpg');
+        }
+    </style>
+    </head>
+
+
+<body>
+    @using (Html.BeginForm())
+    {
+
+
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <img src="@Url.Content(@Model.pro_image)" style="width:200PX; height:200PX" />
+
+                </div>
+
+                <div class="col-lg-8 col-md-8 col-sm-8">
+
+
+                    <h1>Name:@Model.pro_name </h1>
+
+                    <h2>Price:@Model.pro_price </h2>
+                    <h6>Description: @Model.pro_desc  </h6>
+                    <input type="number" name="qty" value="0" id="qty" min="1" max="12" />
+
+                    <input type="submit" name="Submit" class=" btn btn-danger" />
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    }
+</body>
+

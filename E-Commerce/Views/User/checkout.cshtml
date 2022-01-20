@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "checkout";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<style>
+    body {
+        background-image: url('../../Content/images/cyber-monday-retail-sales.jpg');
+    }
+
+   
+    h3 {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    div {
+        text-align: center;
+    }
+
+</style>
+
+
+<br />
+<h1 style="text-align: center;">Checkout</h1>
+
+                @if (TempData["cart"] != null)
+                 {
+                    <table class="table table-responsive table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Bill</th>
+                            </tr>
+                        </thead>
+
+                <tbody>
+        @foreach (var item in TempData["cart"] as List<E_Commerce.Models.cart>)
+        {
+            <tr>
+                <td>@item.pro_id</td>
+
+                <td>@item.pro_name</td>
+                <td>@item.pro_price</td>
+                <td>@item.o_qty</td>
+                <td>@item.o_bill</td>
+                <td>
+                    <a class="btn btn-danger btn-sm" href="@Url.Action("remove",new {id=@item.pro_id})">&#10060;</a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+    <tfoot>
+
+        <tr>
+            <td colspan="4"></td>
+            <td>Total Amount:@TempData["total"]</td>
+        </tr>
+
+    </tfoot>
+</table>
+}
+else
+{
+    <h3 style="color:red" >Your Cart is Empty</h3>
+    <h3>@Html.ActionLink("Go Back", "Index", "User")</h3>
+}
+
+@if (TempData["cart"] != null)
+{
+    using (Html.BeginForm())
+    {
+        <input type="submit" value="Shop Now" class="btn btn-primary" />
+    }
+
+
+}

@@ -1,0 +1,89 @@
+﻿
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .na {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+      <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">   -->
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <img src="~/Content/images/logo-2.jpg"width="50"height="40" />
+                <a class="navbar-brand" href=""> Online Shopping  </a>
+            </div>
+
+            
+
+
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Category", "Index", "User", null, new { @class = "ht" })</li>
+                <li> <a href=""> About </a></li>
+                <ul class="nav navbar-nav">
+                    <li>
+                        @if (Session["u_id"] != null)
+                        {
+
+
+                            @Html.ActionLink("Add Product", "CreateAdd", "User", null, new { @class = "ht" })
+
+
+                        <li style="color:whitesmoke;margin-top:20px;margin-left:70px"> @Session["user"]</li>
+
+                    }
+                        </li>
+                        <li style="float:right">
+                            @if (Session["u_id"] == null)
+                            {
+
+
+
+                                @Html.ActionLink("Log In", "login", "User", null, new { @class = "ht" })
+
+                            }
+                        </li>
+                        <li style="float:right">
+                            @if (Session["u_id"] == null)
+                            {
+                                @Html.ActionLink("Sign Up", "Register", "User", null, new { @class = "ht" })
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Log Out", "SignOut", "User", null, new { @class = "ht" })
+                            }
+
+                        </li>
+
+                        <li style="float:right">
+                            @if (Session["u_id"] == null)
+                            {
+
+
+
+                                @Html.ActionLink("Log in as Admin", "login", "Admin", null, new { @class = "ht" })
+
+                            }
+                        </li>
+
+
+                    </ul>
+        </div>
+    </nav>
+
+        @RenderBody()
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <script src="~/Scripts/bootstrap.js"></script>
+</body>
+
+</html>

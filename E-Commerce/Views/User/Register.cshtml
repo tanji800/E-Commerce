@@ -1,0 +1,192 @@
+﻿@model E_Commerce.Models.tbl_user
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <style>
+        body {
+            background-image: url('../../Content/images/bruno-kelzer-LvySG1hvuzI-unsplash (1).jpg');
+        }
+    </style>
+
+
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=devanagari,latin-ext"
+          rel="stylesheet">
+
+    <link href="~/Content/AddCat_Style/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/AddCat_Style/style.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+</head>
+
+
+
+
+
+@using (Html.BeginForm("Register", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <body>
+
+
+
+
+
+
+        <div class="main-w3ls">
+
+
+            <div class="left-content">
+                <div class="w3ls-content">
+                    <!-- logo -->
+                    @*<h1>
+                        <a href="index.html"><span class="fa fa-magic"></span>Learning Innovation Academy</a>
+                    </h1>*@
+                    <!-- //logo -->
+                    <h2>Welcome to Online Shopping.</h2>
+                    <a href="#" class="button-w3ls">
+                        <span class="fa fa-long-arrow-right"></span>
+                    </a>
+
+                </div>
+                <!-- copyright -->
+                @*<div class="copyright">
+                    <p>
+                        &copy; 2018 Full Screen Enroll Form. All rights reserved | Design by
+                        <a href="ASIT-Tech">ASIT-Tech</a>
+                    </p>
+                </div>*@
+                <!-- //copyright -->
+            </div>
+
+
+            <div class="right-form-agile">
+                <!-- content -->
+                <div class="sub-main-w3">
+                    <h3>User Registeration</h3>
+
+                    <p></p>
+
+
+
+                    <form action="#" method="post">
+                        <div class="form-style-agile">
+                            <div class="pom-agile">
+
+                                <span class="fa fa-user"></span>
+
+                                @*<div class="container">*@
+                                    @*<label for="uname"><b>Username</b></label>*@
+                                    @*<input type="text" placeholder="Enter Username" name="uname" required>*@
+                                    @Html.TextBoxFor(x => x.u_name, new { @class = "form-control", @placeholder = "User Name" })
+                                @*</div>*@
+                            </div>
+                            <span style="color:red">@Html.ValidationMessageFor(x => x.u_name)</span>
+
+                            
+
+                            <div class="form-style-agile">
+                                <div class="pom-agile">
+                                    <span class="fa fa-user"></span>
+                                    @*<label for="upassword"><b>Password</b></label>*@
+                                    @*<input type="text" placeholder="Enter Username" name="uname" required>*@
+                                    @Html.TextBoxFor(x => x.u_password, new { @class = "form-control", @placeholder = "Password" })
+                                </div>
+                            </div>
+                            <span style="color:red">@Html.ValidationMessageFor(x => x.u_password)</span>
+                            
+
+
+                            <div class="form-style-agile">
+                                <div class="pom-agile">
+                                    <span class="fa fa-user"></span>
+                                    @*<label for="umobile"><b>Mobile</b></label>*@
+                                    @*<input type="text" placeholder="Enter Username" name="uname" required>*@
+                                    @Html.TextBoxFor(x => x.u_mobile, new { @class = "form-control", @placeholder = "Mobile" })
+                                </div>
+                            </div>
+                            <span style="color:red">@Html.ValidationMessageFor(x => x.u_mobile)</span>
+                            
+
+
+                            <div class="form-style-agile">
+                                <div class="pom-agile">
+                                    <span class="fa fa-user"></span>
+                                    @*<label for="uemail"><b>Email</b></label>*@
+                                    @*<input type="text" placeholder="Enter Username" name="uname" required>*@
+                                    @Html.TextBoxFor(x => x.u_email, new { @class = "form-control", @placeholder = "Email" })
+                                </div>
+                            </div>
+                            <span style="color:red">@Html.ValidationMessageFor(x => x.u_email)</span>
+                            
+
+
+                            <div class="form-style-agile">
+                                <div class="pom-agile">
+                                    <span class="fa fa-user"></span>
+                                    @*<label for="ucompany"><b>Company</b></label>*@
+                                    @*<input type="text" placeholder="Enter Username" name="uname" required>*@
+                                    @Html.TextBoxFor(x => x.u_company, new { @class = "form-control", @placeholder = "Company" })
+                                </div>
+                            </div>
+                            <span style="color:red">@Html.ValidationMessageFor(x => x.u_company)</span>
+                            
+
+
+
+                            <div class="form-style-agile">
+                                <div class="pom-agile">
+                                    <span class="fa fa-key"></span>
+                                    @*<label for="pwd">Image:</label>*@
+                                    <input type="file" name="imgfile" id="imgfile" class="input" required />
+                                </div>
+                            </div>
+
+                            
+
+                            <input type="submit" value="Register" />
+
+
+                        </div>
+                        
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+        <!-- //content -->
+
+    </body>
+
+
+}
+
+
+</html>
+
+
+<script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+@section Scripts
+    {
+
+
+    @Scripts.Render("~/bundles/jqueryval")
+}
